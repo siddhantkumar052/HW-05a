@@ -16,17 +16,17 @@ def getRepo(username):
 
     response = response.json()
     fakeResponse = response
-    print(fakeResponse)
+    #print(fakeResponse)
 
     if len(response) == 0:
         print("No Repos Found")
         return False
 
-    # for repo in response:
-    #     repoResponse = requests.get(repo['commits_url'].split("{")[0])
-    #     repoResponse = repoResponse.json()
-    #     print("Name of Repo: " +
-    #           repo['name'] + " \n Number of commits: " + str(len(repoResponse)))
+    for repo in response:
+        repoResponse = requests.get(repo['commits_url'].split("{")[0])
+        repoResponse = repoResponse.json()
+        print("Name of Repo: " +
+              repo['name'] + " \n Number of commits: " + str(len(repoResponse)))
 
     return True
 
