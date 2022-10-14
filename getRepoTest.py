@@ -14,6 +14,10 @@ class TestGithubAPI(unittest.TestCase):
     def testGithub1(self):
         self.assertEqual(getRepo('siddhantkumar052'), True)
 
+    def testGithub2(self,fakeResponse):
+        self.assertEqual(getRepo('siddhantkumar052'),fakeResponse, True)
+
+
 
 if __name__ == '__main__':
     print('Running unit tests')
